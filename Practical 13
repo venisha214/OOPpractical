@@ -1,0 +1,43 @@
+import java.util.Scanner;
+class Shape {
+    double d1, d2;
+
+  void getData(double d1, double d2) {
+       this.d1 = d1;
+       this.d2 = d2;
+    }
+}
+
+class Triangle extends Shape {
+    double area() {
+        return 0.5 * d1 * d2;
+    }
+}
+
+class Rectangle extends Shape {
+    double area() {
+        return d1 * d2;
+    }
+}
+
+public class TestShape {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Triangle t = new Triangle();
+        System.out.print("Enter base and height of Triangle: ");
+        double b1 = sc.nextDouble();
+        double h1 = sc.nextDouble();
+        t.getData(b1, h1);
+
+        Rectangle r = new Rectangle();
+        System.out.print("Enter length and width of Rectangle: ");
+        double l = sc.nextDouble();
+        double w = sc.nextDouble();
+        r.getData(l, w);
+
+        System.out.println("\nArea of Triangle = " + t.area());
+        System.out.println("Area of Rectangle = " + r.area());
+        sc.close();
+    }
+}
